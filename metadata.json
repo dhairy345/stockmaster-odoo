@@ -1,0 +1,7 @@
+{
+  "name": " StockMaster IMS",
+  "description": "A modular Inventory Management System prototype simulating Odoo-like stock operations.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
