@@ -1,33 +1,112 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# StockMaster IMS
 
-# StockMaster Odoo
-
-A comprehensive stock and inventory management system built with Odoo integration, powered by AI capabilities for intelligent inventory tracking and management.
-
-## Overview
-
-StockMaster Odoo is an advanced inventory management solution that leverages Odoo's powerful ERP capabilities combined with AI-driven insights to help businesses efficiently manage their stock, track inventory levels, and optimize supply chain operations.
+A modern inventory management system built with React and TypeScript for tracking products, stock movements, and warehouse operations.
 
 ## Features
 
-- **Real-time Inventory Tracking** - Monitor stock levels across multiple warehouses
-- **AI-Powered Insights** - Get intelligent recommendations for stock replenishment
-- **Odoo Integration** - Seamless integration with Odoo ERP system
-- **Automated Alerts** - Receive notifications for low stock and reorder points
-- **Analytics Dashboard** - Visualize inventory trends and performance metrics
+### Product Management
+- Track products with SKU, category, UOM, and cost
+- Multi-location stock tracking (WH/Stock, WH/Showroom, WH/Packing, etc.)
+- Low stock alerts and minimum stock level monitoring
+- Support for different tracking strategies (No Tracking, By Lots, By Serial Number)
+- QR code scanning support for product identification
 
-## Run Locally
+### Stock Operations
+- **Incoming Receipts** - Receive products from vendors
+- **Delivery Orders** - Ship products to customers
+- **Internal Transfers** - Move stock between warehouse locations
+- **Inventory Adjustments** - Adjust stock levels
+- Operation status tracking (Draft, Waiting, Ready, Done, Cancelled)
+- Late delivery and receipt monitoring
 
-**Prerequisites:**  Node.js
+### Dashboard & Analytics
+- Real-time KPI metrics
+- Low stock item tracking
+- Late receipts and deliveries monitoring
+- Visual charts using Recharts
+- Stock ledger with complete transaction history
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Authentication
+- Secure login system with user authentication
+- Protected routes and session management
 
-## AI Studio
+## Tech Stack
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Vxl9imnFldSP-uikI8tO5nJTNCXXMkba
+- **Frontend**: React 19.2.0 with TypeScript
+- **Build Tool**: Vite 6.2.0
+- **UI Components**: Lucide React icons
+- **Charts**: Recharts 3.4.1
+- **QR Code**: html5-qrcode 2.3.8
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dhairy345/stockmaster-odoo.git
+   cd stockmaster-odoo
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+5. Preview production build:
+   ```bash
+   npm run preview
+   ```
+
+## Project Structure
+
+```
+├── components/       # Reusable UI components
+├── context/         # React context providers (Auth, Inventory)
+├── lib/             # Utility functions and helpers
+├── pages/           # Main application pages
+│   ├── Dashboard.tsx
+│   ├── Products.tsx
+│   ├── Operations.tsx
+│   ├── StockLedger.tsx
+│   ├── Settings.tsx
+│   └── Login.tsx
+├── types.ts         # TypeScript type definitions
+├── constants.ts     # Initial data and constants
+└── App.tsx          # Main application component
+```
+
+## Key Concepts
+
+### Operation Types
+- **Receipt**: Incoming stock from vendors
+- **Delivery**: Outgoing stock to customers
+- **Internal Transfer**: Movement between warehouse locations
+- **Adjustment**: Stock level corrections
+
+### Tracking Strategies
+- **No Tracking**: Simple quantity tracking
+- **By Lots**: Track products in batches
+- **By Serial Number**: Track individual items with unique identifiers
+
+### Warehouse Locations
+- WH/Stock, WH/Input, WH/Output
+- WH/Packing, WH/Showroom, WH/Production
+- Vendor, Customer, Scrap, Inventory Adjustment
+
+## License
+
+Private project
